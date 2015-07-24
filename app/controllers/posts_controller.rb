@@ -12,7 +12,9 @@ class PostsController < ApplicationController
     @post = current_or_guest_user.posts.build(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to @post, notice: "Succesffully created post."
+    else
+      redirect_to :back, alert: "Failed to create post."
     end
   end
 
