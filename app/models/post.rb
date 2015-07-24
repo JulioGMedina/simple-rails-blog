@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
-  belongs_to :use
-  validates_presence_of :content
+  belongs_to :user
+  validates :content,
+            :user_id, presence: true
+
+  has_many :comments
 end
