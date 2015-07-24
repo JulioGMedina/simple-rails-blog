@@ -1,4 +1,5 @@
-<li class="collection-item avatar">
-  <%= link_to "Read post", post %>
-  <p><%= post.content %></p>
+<li">
+  <p><%= truncate(post.content, length: 100, separator:  " ") %></p>
+  <%= link_to "Read more", post, class: "btn btn-sm" %>
+
 </li>
