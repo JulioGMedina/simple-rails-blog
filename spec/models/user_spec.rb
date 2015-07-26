@@ -3,11 +3,11 @@ require "spec_helper"
 describe User do
   describe 'DB' do
     it "should have an email column" do
-      expect(subject).to have_db_column(:email).of_type(:string).with_options(:null => false)
+      expect(subject).to have_db_column(:email).of_type(:string).with_options(null:  false)
     end
 
     it "should have a password column" do
-      expect(subject).to have_db_column(:encrypted_password).of_type(:string).with_options(:null => false)
+      expect(subject).to have_db_column(:encrypted_password).of_type(:string).with_options(null: false)
     end
 
     it "should have a reset_password_token column" do
@@ -98,4 +98,6 @@ describe User do
 
     end
   end
+
+
 end
