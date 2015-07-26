@@ -1,3 +1,15 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+
+  $('.comment-trigger').on 'click', ->
+    $('.comment').toggleClass('hidden')
+    new_text = toggleText($(this).text())
+    $(this).text(new_text)
+
+  toggleText = (text) ->
+    if text == "reply"
+      new_text = "cancel"
+    else
+      new_text = "reply"
+
+    return new_text
+
