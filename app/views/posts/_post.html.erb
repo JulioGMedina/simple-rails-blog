@@ -1,5 +1,6 @@
 <li">
   <p><%= truncate(post.content, length: 100, separator:  " ") %></p>
   <%= link_to "Read more", post, class: "btn btn-sm" %>
+  <p><%= post.total_comment_count %> comments</p>
 </li>
 <hr></hr>
