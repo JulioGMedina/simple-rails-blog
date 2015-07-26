@@ -34,9 +34,9 @@ gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "kaminari"
 gem "strip_attributes"
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'jquery-turbolinks'
 
 
 
