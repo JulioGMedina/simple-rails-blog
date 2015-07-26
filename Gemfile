@@ -54,8 +54,12 @@ group :development, :test do
   gem 'pry-rails'
 
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
 
+end
 
-
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 
 end
