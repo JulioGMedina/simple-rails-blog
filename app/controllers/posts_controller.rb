@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   protected
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.includes(comments: :sub_comments).find(params[:id])
     end
 
   def post_params

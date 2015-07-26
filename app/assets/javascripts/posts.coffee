@@ -1,7 +1,12 @@
 $ ->
 
   $('.comment-trigger').on 'click', ->
-    $('.comment').toggleClass('hidden')
+    $('.new-comment').toggleClass('hidden')
+    new_text = toggleText($(this).text())
+    $(this).text(new_text)
+
+  $('.sub-comment-trigger').on 'click', ->
+    $(this).parent().find(".sub-comment").toggleClass("hidden")
     new_text = toggleText($(this).text())
     $(this).text(new_text)
 

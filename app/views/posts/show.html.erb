@@ -12,10 +12,14 @@
       </div>
     </div>
   </div>
-  <div class="row comment hidden">
-    <div class="col-md-9">
-      <%= render partial: "comments/comment_form", locals: {post: @post} %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= render @post.comments  %>
     </div>
   </div>
-
+  <div class="row new-comment hidden">
+    <div class="col-md-9">
+      <%= render partial: "comments/comment_form", locals: {post: @post, parent: nil} %>
+    </div>
+  </div>
 </div>

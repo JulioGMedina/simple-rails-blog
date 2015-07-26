@@ -1,0 +1,30 @@
+<p>
+  <%= comment.content %>
+</p>
+<div comment-actions>
+  <%= link_to "reply", "javascript:void(0)", class: "sub-comment-trigger" %>
+  <% if current_or_guest_user.id == comment.user_id %>
+      <%= link_to "delete", post_comment_path(@post, comment), method: :delete, data: {confirm: "Are you sure you want delete this post"} %>
+  <% end %>
+  <div class="row sub-comment hidden">
+    <div class="col-md-9">
+      <%= render partial: "comments/comment_form", locals: {post: @post, parent: comment.id} %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <% if comment.parent_id %>
+        <div class="col-md-12"
+          <%= render partial: "comments/comment", :collection => comment.sub_comments, :as => :comment %>
+      <% else %>
+        <div class="col-md-11 col-md-offset-1">
+          <%= render partial: "comments/comment", :collection => comment.sub_comments, :as => :comment %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<hr></hr>
